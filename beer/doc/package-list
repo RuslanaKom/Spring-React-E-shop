@@ -1,0 +1,7 @@
+Configs
+com.example.beer
+com.project.beer
+com.project.beer.controllers
+com.project.beer.entities
+com.project.beer.repositories
+com.project.beer.services
