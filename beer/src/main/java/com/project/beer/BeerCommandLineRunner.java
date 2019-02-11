@@ -4,17 +4,27 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.config.annotation.authentication.configurers.userdetails.UserDetailsAwareConfigurer;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.project.beer.entities.Beer;
 import com.project.beer.entities.Category;
-import com.project.beer.repositories.BeerRepository;;
+import com.project.beer.repositories.BeerRepository;
+import com.project.beer.repositories.UserRepository;
+import com.project.beer.users.entities.User;
+import com.project.beer.users.entities.UserAccount;;
 
 @Component
 public class BeerCommandLineRunner implements CommandLineRunner {
-
+	@Autowired 
 	private BeerRepository beerRepository;
+	@Autowired 
+	private UserRepository userRepository;
+	@Autowired 
+	private PasswordEncoder passwordEncoder;
 	private int number=0;
 
 	public BeerCommandLineRunner(BeerRepository beerRepository) {
@@ -39,6 +49,21 @@ public class BeerCommandLineRunner implements CommandLineRunner {
 //		.forEach(beer->beerRepository.save(beer));
 //		
 //		System.out.println("linerunner made it");
+//		
+//		User user = new User();
+//		user.setFirstName("firstName1");
+//		user.setLastName("lastName1");
+//		userRepository.save(user);
+//		
+//		UserAccount userAccount = new UserAccount();
+//		userAccount.setUser(user);
+//		userAccount.setUsername("user1");
+//		userAccount.setPassword(passwordEncoder.encode("user1"));
+//		userAccount.setRole("BUYER");
+//		userAccount.setEnabled(true);
+//		userAccount.setAccountNonLocked(true);
+//		
+//		userRepository.save(userAccount);
 	}
 
 	private String createImagePath() {

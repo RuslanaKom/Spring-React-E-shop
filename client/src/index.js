@@ -12,6 +12,7 @@ import {Route} from 'react-router-dom';
 import ShoppingCartFull from './ShoppingCart/ShoppingCartFull';
 import Contacts from './Contacts/Contacts';
 import Footer from './Contacts/Footer';
+import LoginContainer from './Login/LoginContainer';
 
 
 // ReactDOM.render(
@@ -29,6 +30,7 @@ import Footer from './Contacts/Footer';
         <Route path="/beer/:searchName" component={BeerContainer} />
         <Route path="/cart" component={ShoppingCartFull} />
         <Route exact path="/contacts" component={Contacts} />
+        <Route exact path="/login" component={LoginContainer} />
         </Switch>
         <Footer/>
         </div>

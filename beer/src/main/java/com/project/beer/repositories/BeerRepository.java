@@ -63,7 +63,7 @@ public class BeerRepository {
 		this.em = em;
 	}
 
-	//@Transactional
+	@Transactional
 	public void save(Object T) {
 		em.persist(T);
 	}

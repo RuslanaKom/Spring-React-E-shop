@@ -22,6 +22,11 @@ class NavigationComponent extends React.Component {
                         Contacts
                     </Link>
                 </NavItem>
+                <NavItem eventKey={3} pull-right>
+                    <Link to="/login">
+                        Login
+                    </Link>
+                </NavItem>
             </Nav>
             <Nav pullRight>
                 <NavItem>
